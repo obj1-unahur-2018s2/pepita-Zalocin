@@ -31,16 +31,32 @@ object sorgo {
 // despues, agregar mijo y canelones
 
 object mijo {
-	var estaMojado = true
-	method mojarse() { estaMojado = true }
-
-	method secarse() { estaMojado = false }
+	var estaMojado = false
 	
-	method energiaPorGramo(){
-		if (estaMojado) {return 15 
-					}
-			else  { return 10
-		}
- }
+	method energiaPorGramo(){ return if (estaMojado) {15} else {20} }
+	method mojarse() { estaMojado = true }
+	method secarse() { estaMojado = false }	
+	 	
 }
 
+
+object canelones {
+	var tieneSalsa = false
+	var tieneQueso = false
+	
+	const base = 20
+	const plusSalsa = 5
+	const plusQueso = 7 
+	
+	method energiaPorGramo(){
+		return base
+			+(if (tieneSalsa) {plusSalsa} else {0} )
+			+(if (tieneQueso) {plusQueso} else {0} )
+	}
+		
+		method ponerSalsa() { tieneSalsa = true }
+		method sacarsalsa() { tieneSalsa = false }
+		method ponerQueso() { tieneQueso = true }
+		method sacarQueso() { tieneQueso = false }
+		
+}

@@ -30,14 +30,16 @@ object pepita {
 	
 	method haceLoQueQuieras() { 
 		if (self.estaDebil()) {
-			// completar
-		} 
+			self.comer(alpiste,20) }
+		else if (self.estaFeliz()){
+			self.volar(8)}
+		else {}
+		}
+	}
 		// completar el método, de acuerdo a la estructura
 		// que se deja comentada aca abajo
 //		else if (... otra condicion ...) {
-//			
+	
 //		} else {
 //			
 //		}
-	}
-}
