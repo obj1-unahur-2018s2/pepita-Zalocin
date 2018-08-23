@@ -11,5 +11,5 @@ object pepita {
 	var energia=0
 	method energia() { return energia }
 	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
-	method visitar(destino) { energia += destino.energiaRevitalizadora() }
+	method visitar(destino) { energia += destino.energiaRevitalizadora(self) } //self me paso a má, Pepita como parámetro.
 }
