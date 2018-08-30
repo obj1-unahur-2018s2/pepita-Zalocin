@@ -19,12 +19,15 @@ object pipa {
 	var kmsVuelo = 0
 	var gramosIngeridos = 0 
 	 
-	method volar(kms) {kmsVuelo = kmsVuelo + kms }
-	method comer(cosa, gramos) {gramosIngeridos = gramosIngeridos + gramos }
+	method volar(kms) {kmsVuelo += kms }
+	method comer(cosa, gramos) {gramosIngeridos += gramos }
+	method haceLoQueQuieras() { }   // queda asi
+	// pregunta: ¿por qué es necesario agregar este método, sin código. 
+	
+	/* Respuesta:
+	 * por que si no, se rompe cuando quiera entrenar a Pipa.
+	 * Pipa debe ser POLIMORFICA con las otras aves*/
+	
 	method kmsRecorridos() { return kmsVuelo }
 	method gramosIngeridos() { return gramosIngeridos }
-	
-	 
-	method haceLoQueQuieras() { }   // queda asi
-	// pregunta: ¿por qué es necesario agregar este método, sin código
 }
